@@ -15,16 +15,16 @@ from tqdm import tqdm
 import tensorflow as tf
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
-from keras.utils import to_categorical
+from tensorflow.keras.utils import to_categorical
 from sklearn.feature_extraction.text import TfidfVectorizer
 # from sklearn.svm import SVC  #####
 from sklearn.metrics import classification_report  ####
-from keras.preprocessing.text import Tokenizer
+from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
-from keras import Sequential
-from keras.layers import Conv1D, Embedding, Bidirectional, LSTM, Dense, Dropout, BatchNormalization
-from keras.optimizers import Adam
-from keras.callbacks import EarlyStopping
+from tensorflow.keras import Sequential
+from tensorflow.keras.layers import Conv1D, Embedding, Bidirectional, LSTM, Dense, Dropout, BatchNormalization
+from tensorflow.keras.optimizers import Adam
+from tensorflow.keras.callbacks import EarlyStopping
 from contents.contents import *
 
 st.markdown("# Write lyrics!")
@@ -63,8 +63,8 @@ def remove_account_tag(text):
 
 
 ## 해시태그 제거
-def remove_hashtag(text):
-    return re.sub(r'#[\w]+', '', text)
+# def remove_hashtag(text):
+#     return re.sub(r'#[\w]+', '', text)
 
 
 ## url 제거
@@ -176,6 +176,6 @@ lyrics_predict(lyrics)
 
 
 
-# prob = model.predict()
-# for idx in prob.argsort()[0][::-1][:3]:
-#         print(idx, "{:.2f}%".format(prob[0][idx]*100))
+prob = model.predict()
+for idx in prob.argsort()[0][::-1][:3]:
+        print(label_sentiment_map(idx), "{:.2f}%".format(prob[0][idx]*100))
