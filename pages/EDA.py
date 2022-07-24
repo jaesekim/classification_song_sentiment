@@ -70,3 +70,14 @@ ax[1].set_title("df2['sentiment']")
 
 plt.tight_layout()
 st.pyplot(fig)
+
+df = pd.concat([df1, df2])
+df = df.drop_duplicates()
+df['sentiment'] = df['sentiment'].astype('category')
+
+# After Concat
+st.markdown("## After Concat")
+fig, ax = plt.subplots(1,1, figsize=(12,3))
+sns.countplot(y=df1['sentiment'], orient='h', order=sentiments, ax=ax[0])  
+plt.title('Distribution of label values')
+st.pyplot(fig)
