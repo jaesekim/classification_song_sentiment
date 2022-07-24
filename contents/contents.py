@@ -23,7 +23,13 @@ love        1641
 surprise     719
 '''
 
-
+df_value_cnt = '''
+joy        11877
+sadness    10826
+anxiety    10654
+love        5392
+anger       4111
+'''
 
 
 

@@ -90,13 +90,12 @@ st.pyplot(fig)
 df = pd.concat([df1, df2])
 df = df.drop_duplicates()
 df['sentiment'] = df['sentiment'].astype('category')
-df['input'] = df['input'].map(lambda x : x if len(x) > 15 else np.nan)
-df = df.dropna(axis=0).reset_index(drop=True)
 
 st.markdown('---')
 
 # After Concat
 st.markdown("## After Concat")
+st.code(df_value_cnt, language='python')
 fig = plt.figure(figsize=(12,3))
 sns.countplot(y=df1['sentiment'], orient='h', order=sentiments)  
 plt.title('Distribution of label values')
