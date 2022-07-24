@@ -1,5 +1,3 @@
-from importlib.resources import path
-from pandas import concat
 import streamlit as st
 from contents.contents import *
 

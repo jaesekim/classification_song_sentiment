@@ -1,3 +1,33 @@
+df_1_value_cnt = '''
+neutral       8638
+worry         8459
+happiness     5209
+sadness       5165
+love          3842
+surprise      2187
+fun           1776
+relief        1526
+hate          1323
+empty          827
+enthusiasm     759
+boredom        179
+anger          110
+Name: sentiment, dtype: int64'''
+
+df_2_value_cnt = '''
+joy         6760
+sadness     5797
+anger       2709
+fear        2373
+love        1641
+surprise     719
+'''
+
+
+
+
+
+
 # load data
 data_path_1 = '''df1 = pd.read_csv('your_path/data/tweet_emotions.csv')
 df1 = df1.drop(columns='tweet_id')
