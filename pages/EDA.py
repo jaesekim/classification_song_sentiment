@@ -31,7 +31,11 @@ if click == 'df1_sentiment':
     st.markdown('##### df1.value_counts')
     st.code(df_1_value_cnt, language='python')
     st.dataframe(df1.head())
+    sns.countplot(y=df1['sentiment'], orient='h')
+    plt.title("df1['sentiment']")
 else:
     st.markdown('##### df2.value_counts')
     st.code(df_2_value_cnt, language='python')
     st.dataframe(df2.head())
+    sns.countplot(y=df2['sentiment'], orient='h')
+    plt.title("df2['sentiment']")
