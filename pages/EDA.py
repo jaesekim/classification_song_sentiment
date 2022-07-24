@@ -21,6 +21,7 @@ df2 = pd.concat([df2_train, df2_val, df2_test], axis=0)
 df2.columns = ['input', 'sentiment']
 df2 = df2.drop_duplicates()
 
+st.markdown("## Before Preprocessing Dataset")
 click = st.radio(
     "Select Dataset",
     ('df1_sentiment', 'df2_sentiment')
@@ -29,6 +30,8 @@ click = st.radio(
 if click == 'df1_sentiment':
     st.markdown('##### df1.value_counts')
     st.code(df_1_value_cnt, language='python')
+    st.dataframe(df1.head())
 else:
     st.markdown('##### df2.value_counts')
     st.code(df_2_value_cnt, language='python')
+    st.dataframe(df2.head())
