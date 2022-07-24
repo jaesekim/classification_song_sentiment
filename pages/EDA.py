@@ -6,6 +6,29 @@ import matplotlib.pyplot as plt
 
 from contents.contents import *
 
-st.markdown('## Value Counts')
-st.code(df_1_value_cnt, language='python')
-st.code(df_2_value_cnt, language='python')
+
+# load df1 
+df1 = pd.read_csv('./data/tweet_emotions.csv')
+df1 = df1.drop(columns='tweet_id')
+df1.columns = ['sentiment', 'input']
+df1 = df1[['input', 'sentiment']]
+
+# loda df2
+df2_train = pd.read_csv('./data/train.txt', header=None, sep =';', names=['Input','Sentiment'], encoding='utf-8')
+df2_val = pd.read_csv('./data/val.txt', header=None, sep =';', names=['Input','Sentiment'], encoding='utf-8')
+df2_test = pd.read_csv('./data/test.txt', header=None, sep =';', names=['Input','Sentiment'], encoding='utf-8')
+df2 = pd.concat([df2_train, df2_val, df2_test], axis=0)
+df2.columns = ['input', 'sentiment']
+df2 = df2.drop_duplicates()
+
+click = st.radio(
+    "Select Dataset",
+    ('df1_sentiment', 'df2_sentiment')
+)
+
+if click == 'df1_sentiment':
+    st.markdown('##### df1.value_counts')
+    st.code(df_1_value_cnt, language='python')
+else:
+    st.markdown('##### df2.value_counts')
+    st.code(df_2_value_cnt, language='python')
