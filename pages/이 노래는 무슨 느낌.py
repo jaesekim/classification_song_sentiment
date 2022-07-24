@@ -20,7 +20,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 # from sklearn.svm import SVC  #####
 from sklearn.metrics import classification_report  ####
 from keras.preprocessing.text import Tokenizer
-from keras.preprocessing.sequence import pad_sequences
+from tensorflow.keras.preprocessing.sequence import pad_sequences
 from keras import Sequential
 from keras.layers import Conv1D, Embedding, Bidirectional, LSTM, Dense, Dropout, BatchNormalization
 from keras.optimizers import Adam
