@@ -220,4 +220,4 @@ def print_wordcloud(df, sentiment):
     plt.axis("off")
     plt.show()
     st.pyplot
-print_wordcloud(df, 'sadness')
+st.image(print_wordcloud(df, 'sadness'))
