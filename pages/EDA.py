@@ -4,8 +4,12 @@ import pandas as pd
 import seaborn as sns
 import numpy as np
 import matplotlib.pyplot as plt
-from wordcloud import WordCloud
-
+import nltk
+from nltk.corpus import stopwords
+from nltk.stem import WordNetLemmatizer
+from nltk import word_tokenize
+from wordcloud import WordCloud, STOPWORDS
+from tqdm import tqdm
 from contents.contents import *
 
 
