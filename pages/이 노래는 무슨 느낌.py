@@ -27,6 +27,7 @@ from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.callbacks import EarlyStopping
 from contents.contents import *
 
+st.markdown("# 구현 실패...")
 st.markdown("# Write lyrics!")
 st.markdown("### How does this song feel?")
 st.markdown("##### You can predict more appropriately by writing lyrics \
@@ -176,6 +177,6 @@ lyrics_predict(lyrics)
 
 
 
-prob = model.predict()
-for idx in prob.argsort()[0][::-1][:3]:
-        print(label_sentiment_map(idx), "{:.2f}%".format(prob[0][idx]*100))
+# prob = model.predict()
+# for idx in prob.argsort()[0][::-1][:3]:
+#         print(label_sentiment_map(idx), "{:.2f}%".format(prob[0][idx]*100))
