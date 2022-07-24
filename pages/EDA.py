@@ -60,7 +60,7 @@ df1 = df1.dropna(axis=0).reset_index(drop=True)
 df2 = df2.dropna(axis=0).reset_index(drop=True)
 
 sentiments = ['love', 'sadness', 'anger', 'joy', 'anxiety']
-fig, ax = plt.subplots(1,2, figsize=(12,3))
+fig, ax = plt.subplots(1,2, figsize=(20,10))
 
 sns.countplot(y=df1['sentiment'], orient='h', order=sentiments, ax=ax[0])
 ax[0].set_title("df1['sentiment']")
