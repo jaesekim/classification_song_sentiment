@@ -31,11 +31,19 @@ if click == 'df1_sentiment':
     st.markdown('##### df1.value_counts')
     st.code(df_1_value_cnt, language='python')
     st.dataframe(df1.head())
+    fig = plt.figure(figsize=(12,3))
+    sns.countplot(y=df1['sentiment'], orient='h')
+    plt.title("df1['sentiment']")
+    st.pyplot(fig)
     
 else:
     st.markdown('##### df2.value_counts')
     st.code(df_2_value_cnt, language='python')
     st.dataframe(df2.head())
+    fig = plt.figure(figsize=(12,3))
+    sns.countplot(y=df2['sentiment'], orient='h')
+    plt.title("df2['sentiment']")
+    st.pyplot(fig)
 
 # After Mapping and Drop
 
