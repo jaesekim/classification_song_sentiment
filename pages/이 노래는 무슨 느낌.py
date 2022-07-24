@@ -1,8 +1,6 @@
 import streamlit as st
 import tensorflow as tf
-from tensorflow.python.keras import Sequential
-from tensorflow.python.keras.layers import Conv1D, Embedding, Bidirectional, LSTM, Dense, Dropout, BatchNormalization
-from tensorflow.python.keras.callbacks import EarlyStopping
+from tensorflow import keras
 from contents.contents import *
 
 st.markdown("# Write lyrics!")
