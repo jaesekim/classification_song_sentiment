@@ -7,7 +7,7 @@ from contents.contents import *
 st.markdown('## Load Data')
 st.code(data_path_1, language='python')
 st.code(data_path_2, language='python')
-st.code(concat_data, language='python')
+st.code(concat_data_1, language='python')
 
 # concat data
 st.markdown('## concat data')
