@@ -31,13 +31,42 @@ if click == 'df1_sentiment':
     st.markdown('##### df1.value_counts')
     st.code(df_1_value_cnt, language='python')
     st.dataframe(df1.head())
-    df1_fig = sns.countplot(y=df1['sentiment'], orient='h')
-    st.pyplot(df1_fig)
-    # plt.title("df1['sentiment']")
+    
 else:
     st.markdown('##### df2.value_counts')
     st.code(df_2_value_cnt, language='python')
     st.dataframe(df2.head())
-    df2_fig = sns.countplot(y=df2['sentiment'], orient='h')
-    st.pyplot(df2_fig)
-    # plt.title("df2['sentiment']")
+
+# After Mapping and Drop
+
+st.markdown("## After Mapping and Drop")
+
+sentiment_map1 = {'love': 'love', 
+                  'sadness': 'sadness', 
+                  'anger': 'anger', 
+                  'hate': 'anger', 
+                  'happiness': 'joy', 
+                  'worry': 'anxiety' }
+
+sentiment_map2 = {'love': 'love', 
+                  'sadness': 'sadness', 
+                  'anger': 'anger', 
+                  'joy': 'joy', 
+                  'fear': 'anxiety' }
+
+df1['sentiment'] = df1['sentiment'].map(sentiment_map1)
+df2['sentiment'] = df2['sentiment'].map(sentiment_map2)
+df1 = df1.dropna(axis=0).reset_index(drop=True)
+df2 = df2.dropna(axis=0).reset_index(drop=True)
+
+sentiments = ['love', 'sadness', 'anger', 'joy', 'anxiety']
+fig, ax = plt.subplots(1,2, figsize=(12,3))
+
+sns.countplot(y=df1['sentiment'], orient='h', order=sentiments, ax=ax[0])
+ax[0].set_title("df1['sentiment']")
+
+sns.countplot(y=df2['sentiment'], orient='h', order=sentiments, ax=ax[1])
+ax[1].set_title("df2['sentiment']")
+
+plt.tight_layout()
+st.pyplot(fig)
