@@ -78,6 +78,6 @@ df['sentiment'] = df['sentiment'].astype('category')
 # After Concat
 st.markdown("## After Concat")
 fig = plt.figure(figsize=(12,3))
-sns.countplot(y=df1['sentiment'], orient='h', order=sentiments, ax=ax[0])  
+sns.countplot(y=df1['sentiment'], orient='h', order=sentiments)  
 plt.title('Distribution of label values')
 st.pyplot(fig)
